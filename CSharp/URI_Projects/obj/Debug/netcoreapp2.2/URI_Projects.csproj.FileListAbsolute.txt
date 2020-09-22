@@ -1,0 +1,32 @@
+C:\Users\Joelyson David\source\repos\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.csprojAssemblyReference.cache
+C:\Users\Joelyson David\source\repos\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.AssemblyInfoInputs.cache
+C:\Users\Joelyson David\source\repos\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.AssemblyInfo.cs
+C:\Users\Joelyson David\source\repos\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.deps.json
+C:\Users\Joelyson David\source\repos\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.runtimeconfig.json
+C:\Users\Joelyson David\source\repos\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.runtimeconfig.dev.json
+C:\Users\Joelyson David\source\repos\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.dll
+C:\Users\Joelyson David\source\repos\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.pdb
+C:\Users\Joelyson David\source\repos\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.dll
+C:\Users\Joelyson David\source\repos\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.pdb
+C:\Users\Joelyson David\Documents\Works\URI\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.deps.json
+C:\Users\Joelyson David\Documents\Works\URI\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.runtimeconfig.json
+C:\Users\Joelyson David\Documents\Works\URI\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.runtimeconfig.dev.json
+C:\Users\Joelyson David\Documents\Works\URI\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.dll
+C:\Users\Joelyson David\Documents\Works\URI\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.pdb
+C:\Users\Joelyson David\Documents\Works\URI\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.csprojAssemblyReference.cache
+C:\Users\Joelyson David\Documents\Works\URI\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.AssemblyInfoInputs.cache
+C:\Users\Joelyson David\Documents\Works\URI\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.AssemblyInfo.cs
+C:\Users\Joelyson David\Documents\Works\URI\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.dll
+C:\Users\Joelyson David\Documents\Works\URI\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.pdb
+D:\Work\dotnet\URI\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.deps.json
+D:\Work\dotnet\URI\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.runtimeconfig.json
+D:\Work\dotnet\URI\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.runtimeconfig.dev.json
+D:\Work\dotnet\URI\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.dll
+D:\Work\dotnet\URI\URI\URI_Projects\bin\Debug\netcoreapp2.2\URI_Projects.pdb
+D:\Work\dotnet\URI\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.csprojAssemblyReference.cache
+D:\Work\dotnet\URI\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.AssemblyInfoInputs.cache
+D:\Work\dotnet\URI\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.AssemblyInfo.cs
+D:\Work\dotnet\URI\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.csproj.CoreCompileInputs.cache
+D:\Work\dotnet\URI\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.dll
+D:\Work\dotnet\URI\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.pdb
+D:\Work\dotnet\URI\URI\URI_Projects\obj\Debug\netcoreapp2.2\URI_Projects.genruntimeconfig.cache
