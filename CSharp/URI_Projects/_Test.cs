@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Globalization;
+using URI_Projects;
 
 class _Test
 {
     public static void Main(string[] args)
     {
-        // chama algum exercicio
-
+        new _1020_IdadeEmDias().IdadeEmDias();
     }
 }
 
