@@ -330,6 +330,10 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+bin
+obj
+Debug
+debug
 
 # OpenCover UI analysis results
 OpenCover/

@@ -2,7 +2,7 @@
 using System.Globalization;
 using URI_Projects;
 
-class _Test
+class Test
 {
     public static void Main(string[] args)
     {
