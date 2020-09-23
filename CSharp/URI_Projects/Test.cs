@@ -6,7 +6,7 @@ class Test
 {
     public static void Main(string[] args)
     {
-        new _1020_IdadeEmDias().IdadeEmDias();
+        new _1021_NotasEMoedas().NotasEMoedas();
     }
 }
 
