@@ -20,8 +20,6 @@ namespace URI_Projects
 
         public void NotasEMoedas()
         {
-
-
             double valor = 0;
             valor = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             int[] notas = { 100, 50, 20, 10, 5, 2 };
