@@ -1,13 +1,12 @@
-﻿using System;
-using System.Globalization;
-using URI_Projects;
+﻿using URI_Projects.Selecao;
 
-class Test
+namespace URI_Projects
 {
-    public static void Main(string[] args)
+    class URI
     {
-        new _1021_NotasEMoedas().NotasEMoedas();
+        public static void Main(string[] args)
+        {
+            _1038_Lanche.Lanche();
+        }
     }
 }
-
-
