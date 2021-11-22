@@ -5,7 +5,7 @@ fun main(args: Array<String>) {
     val numberB = readLine()?.toDoubleOrNull() ?: -1.0
     val numberC = readLine()?.toDoubleOrNull() ?: -1.0
 
-    if (!isValidNumbers (numberA, numberB, numberC)) return
+    if (!isValidNumbers(numberA, numberB, numberC)) return
 
     val media = media2(numberA, numberB, numberC)
 
@@ -28,5 +28,5 @@ private fun isValidNumbers(number1: Double, number2: Double, number3: Double): B
 }
 
 private fun isValidNumber(number: Double): Boolean {
-    return ((number > 0) && (number < 100))
+    return ((number >= 0) && (number <= 100))
 }
