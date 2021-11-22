@@ -5,7 +5,7 @@ fun main(args: Array<String>) {
     val numberB = readLine()?.toDoubleOrNull() ?: -1.0
     val numberC = readLine()?.toDoubleOrNull() ?: -1.0
 
-    if (!isValidNumber(numberA, numberB, numberC)) return
+    if (!isValidNumbers (numberA, numberB, numberC)) return
 
     val media = media2(numberA, numberB, numberC)
 
@@ -23,7 +23,7 @@ private fun weightCalculate(value: Double, weight: Double): Double {
     return value * weight
 }
 
-private fun isValidNumber(number1: Double, number2: Double, number3: Double): Boolean {
+private fun isValidNumbers(number1: Double, number2: Double, number3: Double): Boolean {
     return isValidNumber(number1) && isValidNumber(number2) && isValidNumber(number3)
 }
 
