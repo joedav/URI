@@ -54,6 +54,4 @@ private fun lerValores(): Valores? {
     }
 }
 
-private fun readDouble() = readLine()?.toDoubleOrNull() ?: -1.0
-
 private data class Valores(val valorA: Double, val valorB: Double, val valorC: Double)
