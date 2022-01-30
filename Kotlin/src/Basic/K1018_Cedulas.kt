@@ -31,7 +31,7 @@ fun cedulas() {
     }
 }
 
-fun calculaNotas(valorInformado: Int, cedulasDisponiveis: Array<Double?>): List<Pair<Int, Double>> {
+private fun calculaNotas(valorInformado: Int, cedulasDisponiveis: Array<Double?>): List<Pair<Int, Double>> {
     val valoresCedulas: MutableList<Pair<Int, Double>> = mutableListOf()
     var valorRestante = valorInformado.toDouble()
     for (valorCedula in cedulasDisponiveis) {
