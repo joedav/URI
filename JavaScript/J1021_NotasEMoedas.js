@@ -12,62 +12,84 @@
 
  * Obs: Utilize ponto (.) para separar a parte decimal.
  */
+notasEMoedas(576.73)
+notasEMoedas(4.0)
+notasEMoedas(91.01)
+notasEMoedas(91.1)
+notasEMoedas(276.82)
 
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n');
-const valor = lines.shift();
-notasEMoedas(valor);
-function notasEMoedas(valor) {
-  parseFloat(valor);
+var input = require('fs').readFileSync('/dev/stdin', 'utf8')
+var lines = input.split('\n')
+const entrada = lines.shift()
+notasEMoedas(entrada)
 
-  if (valor === null || valor === "") return;
-  console.log(valor);
-  const notas = [100.00, 50.00, 20.00, 10.00, 5.00, 2.00];
-  const moedas = [1.00, 0.50, 0.25, 0.10, 0.05, 0.01];
+function notasEMoedas(valorInformado) {
+  if (
+    valorInformado === null ||
+    valorInformado === '' ||
+    typeof valorInformado !== 'number'
+  )
+    return
 
-  let notasCalculadas = calculaNotas(valor, notas);
-  console.log("NOTAS:");
+  const valor = parseFloat(valorInformado)
+
+  if (valor <= 0.0 || valor >= 1000000.0) return
+
+  const notaMoeda = valor.toString().split('.')
+  const nota = notaMoeda[0]
+  const moeda = notaMoeda[1]
+
+  const notas = [100.0, 50.0, 20.0, 10.0, 5.0, 2.0]
+  const moedas = [1.0, 0.5, 0.25, 0.1, 0.05, 0.01]
+
+  let moedasCalculadas = calculaMoedas(moeda, moedas)
+  let notasCalculadas = calculaNotas(nota, notas, moedasCalculadas)
+
+  console.log('NOTAS:')
   notasCalculadas.forEach((nota, indice) => {
-    console.log(`${nota} nota(s) de R$ ${notas[indice].toFixed(2)}`);
-  });
+    console.log(`${nota} nota(s) de R$ ${notas[indice].toFixed(2)}`)
+  })
 
-  let moedasCalculadas = calculaMoedas(valor, moedas);
-  console.log("MOEDAS:");
+  console.log('MOEDAS:')
   moedasCalculadas.forEach((moeda, indice) => {
-    console.log(`${moeda} moedas(s) de R$ ${moedas[indice].toFixed(2)}`)
-  });
+    console.log(`${moeda} moeda(s) de R$ ${moedas[indice].toFixed(2)}`)
+  })
 }
 
-function calculaNotas(valor, notas) {
-  let valorRestante = valor;
-  let qtdNotas = [];
+function calculaNotas(valor, notas, moedas) {
+  let valorRestante = valor
+  let qtdNotas = []
 
-  notas.forEach(nota => {
+  notas.forEach((nota) => {
     if (nota <= valorRestante) {
-      let qtdNota = Math.floor(valorRestante / nota);
-      valorRestante %= nota;
-      qtdNotas.push(qtdNota.toFixed(0));
+      let qtdNota = Math.floor(valorRestante / nota)
+      valorRestante = parseFloat(valorRestante % nota).toFixed(2)
+      qtdNotas.push(qtdNota)
     } else {
-      qtdNotas.push(0);
+      qtdNotas.push(0)
     }
-  });
+  })
 
-  return qtdNotas;
+  if (valorRestante > 0) {
+    moedas[0] = parseInt(valorRestante)
+  }
+
+  return qtdNotas
 }
 
 function calculaMoedas(valor, moedas) {
-  let valorRestante = (valor % 5) % 2;
-  let qtdMoedas = [];
+  let valorRestante = parseFloat(`00.${valor}`)
+  let qtdMoedas = []
 
-  moedas.forEach(moeda => {
+  moedas.forEach((moeda) => {
     if (moeda <= valorRestante) {
-      let qtdMoeda = Math.floor(valorRestante / moeda);
-      valorRestante %= moeda;
-      qtdMoedas.push(qtdMoeda.toFixed(0));
+      let qtdMoeda = Math.floor(valorRestante / moeda)
+      valorRestante = (valorRestante % moeda)
+      qtdMoedas.push(qtdMoeda)
     } else {
-      qtdMoedas.push(0);
+      qtdMoedas.push(0)
     }
-  });
+  })
 
-  return qtdMoedas;
+  return qtdMoedas
 }
