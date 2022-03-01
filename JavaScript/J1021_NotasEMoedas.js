@@ -12,84 +12,55 @@
 
  * Obs: Utilize ponto (.) para separar a parte decimal.
  */
-notasEMoedas(576.73)
-notasEMoedas(4.0)
-notasEMoedas(91.01)
-notasEMoedas(91.1)
-notasEMoedas(276.82)
-
-var input = require('fs').readFileSync('/dev/stdin', 'utf8')
-var lines = input.split('\n')
-const entrada = lines.shift()
-notasEMoedas(entrada)
-
-function notasEMoedas(valorInformado) {
-  if (
-    valorInformado === null ||
-    valorInformado === '' ||
-    typeof valorInformado !== 'number'
-  )
-    return
-
-  const valor = parseFloat(valorInformado)
-
-  if (valor <= 0.0 || valor >= 1000000.0) return
-
-  const notaMoeda = valor.toString().split('.')
-  const nota = notaMoeda[0]
-  const moeda = notaMoeda[1]
-
-  const notas = [100.0, 50.0, 20.0, 10.0, 5.0, 2.0]
-  const moedas = [1.0, 0.5, 0.25, 0.1, 0.05, 0.01]
-
-  let moedasCalculadas = calculaMoedas(moeda, moedas)
-  let notasCalculadas = calculaNotas(nota, notas, moedasCalculadas)
-
-  console.log('NOTAS:')
-  notasCalculadas.forEach((nota, indice) => {
-    console.log(`${nota} nota(s) de R$ ${notas[indice].toFixed(2)}`)
-  })
-
-  console.log('MOEDAS:')
-  moedasCalculadas.forEach((moeda, indice) => {
-    console.log(`${moeda} moeda(s) de R$ ${moedas[indice].toFixed(2)}`)
-  })
-}
-
-function calculaNotas(valor, notas, moedas) {
-  let valorRestante = valor
-  let qtdNotas = []
-
-  notas.forEach((nota) => {
-    if (nota <= valorRestante) {
-      let qtdNota = Math.floor(valorRestante / nota)
-      valorRestante = parseFloat(valorRestante % nota).toFixed(2)
-      qtdNotas.push(qtdNota)
-    } else {
-      qtdNotas.push(0)
-    }
-  })
-
-  if (valorRestante > 0) {
-    moedas[0] = parseInt(valorRestante)
-  }
-
-  return qtdNotas
-}
-
-function calculaMoedas(valor, moedas) {
-  let valorRestante = parseFloat(`00.${valor}`)
-  let qtdMoedas = []
-
-  moedas.forEach((moeda) => {
-    if (moeda <= valorRestante) {
-      let qtdMoeda = Math.floor(valorRestante / moeda)
-      valorRestante = (valorRestante % moeda)
-      qtdMoedas.push(qtdMoeda)
-    } else {
-      qtdMoedas.push(0)
-    }
-  })
-
-  return qtdMoedas
-}
+ notasEMoedas2(576.73)
+ console.log('======')
+ notasEMoedas2(4.0)
+ console.log('======')
+ notasEMoedas2(91.01)
+ console.log('======')
+ notasEMoedas2(276.82)
+ 
+ var input = require('fs').readFileSync('/dev/stdin', 'utf8')
+ var lines = input.split('\n')
+ const entrada = parseFloat(lines.shift())
+ notasEMoedas2(entrada)
+ 
+ function notasEMoedas2(entrada) {
+   if (typeof entrada !== 'number') return
+   if (entrada <= 0 || entrada >= 1000000.0) return
+ 
+   let valor = parseFloat(entrada)
+ 
+   const notas = [100, 50, 20, 10, 5, 2]
+   const moedas = [1.0, 0.5, 0.25, 0.1, 0.05, 0.01]
+ 
+   console.log('NOTAS:')
+   notas.forEach((nota) => {
+     if (valor >= nota) {
+       let qtdNota = parseInt(Math.floor(valor / nota))
+       valor = parseFloat(valor % nota).toFixed(2) // ou  Math.round((valor * 100.0) % nota) / 100
+       mostraResultadoNotas(qtdNota, nota)
+     } else {
+       mostraResultadoNotas(0, nota)
+     }
+   })
+ 
+   console.log('MOEDAS:')
+   moedas.forEach((moeda) => {
+     if (valor >= moeda) {
+       let qtdMoeda = Math.floor(valor / moeda)
+       valor = parseFloat(valor % moeda).toFixed(2)
+       mostraResultadoMoedas(qtdMoeda, moeda)
+     } else {
+       mostraResultadoMoedas(0, moeda)
+     }
+   })
+ }
+ 
+ function mostraResultadoNotas(qtdNota, nota) {
+   console.log(`${qtdNota} nota(s) de R$ ${nota.toFixed(2)}`)
+ }
+ 
+ function mostraResultadoMoedas(qtdMoeda, moeda) {
+   console.log(`${qtdMoeda} moeda(s) de R$ ${moeda.toFixed(2)}`)
+ }
