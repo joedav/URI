@@ -1,5 +1,7 @@
 package Basic
 
+import java.util.*
+
 /**
  * Leia um valor de ponto flutuante com duas casas decimais. Este valor representa um valor monetário.
  * A seguir, calcule o menor número de notas e moedas possíveis no qual o valor pode ser decomposto.
@@ -16,56 +18,61 @@ package Basic
  */
 
 fun main(args: Array<String>) {
-    notasEMoedas()
+    val valor = readLine()?.toDoubleOrNull() ?: return
+    notasEMoedas(valor)
 }
 
-private fun notasEMoedas() {
+private fun notasEMoedas(valorRecebido: Double) {
+    var valor = valorRecebido
     val notas: List<Double> = listOf(100.00, 50.00, 20.00, 10.00, 5.00, 2.00)
     var moedas: List<Double> = listOf(1.00, 0.50, 0.25, 0.10, 0.05, 0.01)
 
-    val valor: Double = readLine()?.toDoubleOrNull() ?: return
-
-    val qtdNotas = calculaNotas(valor, notas)
-    val qtdMoedas = calculaMoedas(valor, moedas)
 
     println("NOTAS:")
-    notas.forEachIndexed { indice, nota ->
-        println("${qtdNotas[indice]} nota(s) de R$ ${"%.2f".format(nota).replace(",", ".")}")
-    }
+    valor = exibeNotas(notas, valor)
+
+
     println("MOEDAS:")
-    moedas.forEachIndexed { indice, moeda ->
-        println("${qtdMoedas[indice]} moeda(s) de R$ ${"%.2f".format(moeda).replace(",", ".")}")
-    }
+    exibeMoedas(moedas, valor)
 }
 
-private fun calculaNotas(valor: Double, notas: List<Double>): List<Int> {
-    val qtdNotas: MutableList<Int> = mutableListOf()
-    var valorRestante: Double = valor
-
+private fun exibeNotas(notas: List<Double>, valorRecebido: Double): Double {
+    var valor = valorRecebido
     notas.forEach { nota ->
-        var qtd: Int = 0
-        if (valorRestante % nota >= 0) {
-            qtd = (valorRestante / nota).toInt()
-            valorRestante %= nota
+        if (valor >= nota) {
+            val qtdNota: Int = Math.floor(valor / nota).toInt()
+            valor = String.format(Locale.ENGLISH, "%.2f", (valor % nota)).toDouble()
+            mostraResultado(qtdNota, nota, "nota")
+        } else {
+            mostraResultado(0, nota, "nota")
         }
-        qtdNotas.add(qtd)
     }
-
-    return qtdNotas
+    return valor
 }
 
-private fun calculaMoedas(valor: Double, moedas: List<Double>): List<Int> {
-    val qtdMoedas: MutableList<Int> = mutableListOf()
-    var valorRestante: Double = ((valor % 5.0) % 2.0)
-
+private fun exibeMoedas(moedas: List<Double>, valorRecebido: Double) {
+    var valor = valorRecebido
     moedas.forEach { moeda ->
-        var qtd = 0
-        if (valorRestante % moeda >= 0) {
-            qtd = (valorRestante / moeda).toInt()
-            valorRestante %= moeda
+        if (valor >= moeda) {
+            val qtdMoeda = Math.floor(valor / moeda).toInt()
+            valor = String.format(Locale.ENGLISH, "%.2f", valor % moeda).toDouble()
+            mostraResultado(qtdMoeda, moeda, "moeda")
+        } else {
+            mostraResultado(0, moeda, "moeda")
         }
-        qtdMoedas.add(qtd)
     }
-
-    return qtdMoedas
 }
+
+private fun mostraResultado(qtdNota: Int, valor: Double, tipo: String) {
+    println("$qtdNota $tipo(s) de R$ ${String.format("%.2f", valor)}")
+}
+
+//fun main() {
+//    notasEMoedas(576.73)
+//    println("======")
+//    notasEMoedas(4.0)
+//    println("======")
+//    notasEMoedas(91.01)
+//    println("======")
+//    notasEMoedas(276.82)
+//}
